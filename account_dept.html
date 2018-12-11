@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>mini project</title>
+<link rel="stylesheet" type="text/css" href="stylesheet1.css">
+<style>
+body{
+background-image:url("https://i.pinimg.com/originals/29/7a/6e/297a6e2f8d258c560ba331ccfa8124d8.jpg");
+}
+#form1{
+transform:translate(170%,30%);
+}
+</style>
+</head>
+<body>
+<h1>ENTER ACCOUNT DETAILS</h1>
+<form id="form1" action="account_dep.php" method="POST">
+
+<label for="Payment_type">PAYMENT TYPE:</label>
+<input type='text' name='Payment_type' value=""><br><br>
+<label for="Amt_paid">AMOUNT PAID:</label>
+<input type='number' name='Amt_paid' value=""><br><br>
+<label for="Purchase_date">PURCHASE DATE:</label>
+<input type='date' name='Purchase_date' value=""><br><br>
+<label for="Customer_id">CUSTOMER ID:</label>
+<input type='number' name='Customer_id' value=""><br><br>
+<label for="Veh_id">VEHICLE ID:</label>
+<input type='text' name='Veh_id' value=""><br><br>
+<label for="Total_amt">TOTAL AMOUNT:</label>
+<input type='number' name='Total_amt' value=""><br><br>
+
+
+<input type='submit' value='Next'><br><br><br>
+<a style="color:black;border:solid,5px,black;padding:2px;background-color:white;" href=ending.html>Back</a>
+
+</body>
+</html>

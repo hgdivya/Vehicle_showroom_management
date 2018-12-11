@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+#category2 option{
+    display:none;
+}
+
+#category2 option.label{
+    display:block;
+}
+
+
+</style>
+</head>
+<body>
+<form id="formname" name="formname" method="post" action="submitform.asp" >
+    <table width="50%" border="0" cellspacing="0" cellpadding="5">
+        <tr>
+            <td width="41%" align="right" valign="middle">Category1 :</td>
+            <td width="59%" align="left" valign="middle">
+                <select name="category1" id="category1">
+                    <option value="">Select Category1</option>
+                    <option value="home_ware">Home Ware</option>
+                    <option value="education">Education</option>
+                    <option value="books">Books</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td align="right" valign="middle">Category2 :</td>
+            <td align="left" valign="middle">
+                <select disabled="disabled" id="category2" name="category2">
+                    <option class="label" value>Select Category2</option>
+                    <!-- Home Ware -->
+                    <option rel="home_ware" value="air-conditioners_coolers">Air-Conditioners/Coolers</option>
+                    <option rel="home_ware" value="audio-video">Audio/Video</option>
+                    <option rel="home_ware" value="beddings">Beddings</option>
+                    <option rel="home_ware" value="camera">Camera</option>
+                    <option rel="home_ware" value="cell-phones">Cell Phones</option>
+                    <!-- Education -->
+                    <option rel="education" value="Colleges">Colleges</option>
+                    <option rel="education" value="Institutes">Institutes</option>
+                    <option rel="education" value="Schools">Schools</option>
+                    <option rel="education" value="Tuitions">Tuitions</option>
+                    <option rel="education" value="Universities">Universities</option>
+                    <!-- Books -->
+                    <option rel="books" value="College Books">College Books</option>
+                    <option rel="books" value="Engineering">Engineering</option>
+                    <option rel="books" value="Magazines">Magazines</option>
+                    <option rel="books" value="Medicine">Medicine</option>
+                    <option rel="books" value="References">References</option>
+                </select>
+            </td>
+        </tr>
+    </table>
+</form>
+<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+<script>
+$(function(){
+
+//fisrt I store in 2 var the reference of two <select>
+
+var $cat = $("#category1"),
+$subcat = $("#category2");
+
+//this is the same thing if you write in your HTML onChange="" in first <select>
+
+$cat.on("change",function(){
+
+//store the value of first select every time it change
+var _rel = $(this).val();
+
+//clean the second select (value and option active) to prevent bad link (cat1 with subcat of cat2)
+$subcat.find("option").attr("style","");
+$subcat.val("");
+
+//if no option is selected i disable the second select
+if(!_rel) return $subcat.prop("disabled",true);
+
+//if a option si selected i show the option linked by rel attr
+$subcat.find("[rel="+_rel+"]").show();
+$subcat.prop("disabled",false);
+});
+
+});
+</script>
+</body>
+</html>
+

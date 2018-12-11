@@ -1,0 +1,60 @@
+h1{
+color:white;
+text-decoration:underline;
+text-align:center;
+
+}
+
+#form1{
+	background-color:rgb(13,174,194);
+	border:black thin solid;
+	padding:10px;
+	display:table-cell;
+	text-align:right;
+	transform:translate(140%,40%);
+	
+}
+label{
+	font:italic;
+	color:rgb(139,0,194);
+}
+input{
+	color:brown;
+}
+#grad{
+	width:800px;
+	height:200px;
+	float:left;
+	background:blue;
+	background:linear-gradient(blue,yellow);
+}
+#ch{
+	background-color:rgb(192,192,192);
+}
+	
+a{
+	text-decoration:none;
+	color:brown;
+}
+a:link{
+	color:#f15a51;
+}
+a:visited{
+	color:#f15a51;
+}
+a:hover{
+	color:#f15a51;
+}
+body{
+	
+	background-color:rgb(131,182,209);
+
+}
+#backk{
+	color:green;
+	background-color:aqua;
+}
+#backk:hover{
+	background-color:pink;
+}
+	
